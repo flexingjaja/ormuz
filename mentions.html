@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnRéserve.fr - Mentions Légales</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+        :root {
+            /* Mode Clair (Défaut) */
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --accent: #059669;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --btn-bg: #f1f5f9;
+        }
+
+        body.dark-mode {
+            /* Mode Sombre */
+            --bg-body: #09090b;
+            --bg-card: #121214;
+            --border-color: #27272a;
+            --accent: #10b981;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --btn-bg: #27272a;
+        }
+
+        * { box-sizing: border-box; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+        .btn-back:hover { background: var(--btn-bg); }
+
+        .theme-btn {
+            background: transparent; border: none; font-size: 1.3rem; cursor: pointer; transition: 0.2s;
+        }
+        .theme-btn:hover { transform: scale(1.1); }
+
+        .logo { font-size: 2rem; font-weight: 900; letter-spacing: -1px; text-align: center; margin-bottom: 2rem; }
+        .logo span { color: var(--accent); }
+        .logo a { text-decoration: none; color: inherit; }
+
+        h1 { font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+        h2 { font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--text-main); }
+        
+        p, ul { margin-bottom: 1rem; color: var(--text-muted); }
+        ul { padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+
+        .highlight { background: rgba(5, 150, 105, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent); color: var(--text-main); font-weight: 500; margin: 1.5rem 0; }
+        body.dark-mode .highlight { background: rgba(16, 185, 129, 0.1); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="top-nav">
+            <a href="index.html" class="btn-back">← Retour au comparateur</a>
+            <button class="theme-btn" onclick="toggleTheme()" id="theme-btn" title="Changer le thème">🌙</button>
+        </div>
+
+        <div class="logo"><a href="index.html">EnRéserve<span>.fr</span></a></div>
+
+        <h1>À propos et Mentions Légales</h1>
+
+        <div class="highlight">
+            Ce site est un projet strictement personnel, à but non lucratif et dénué de toute publicité. L'intégralité du code source constituant cette plateforme a été rédigée avec l'assistance d'une Intelligence Artificielle.
+        </div>
+
+        <h2>1. Origine des données</h2>
+        <p>Les prix des carburants affichés sur EnRéserve.fr sont récupérés en temps réel depuis le flux open data officiel du gouvernement français : <strong>Prix des carburants en France (flux instantané)</strong>, mis à disposition publiquement sur <em>data.economie.gouv.fr</em>.</p>
+        <p>L'application se limite à formater, filtrer et afficher ces données de manière ergonomique. Elle ne modifie, ne stocke, ni ne vérifie les tarifs et adresses transmis par l'État.</p>
+
+        <h2>2. Clause de non-responsabilité (Disclaimer)</h2>
+        <p>EnRéserve.fr est un outil logiciel fourni "en l'état" et à titre purement informatif. L'éditeur du site décline toute responsabilité concernant :</p>
+        <ul>
+            <li>L'exactitude, la mise à jour ou l'exhaustivité des prix affichés sur la carte. En cas de litige, seul le prix affiché physiquement sur le totem de la station-service fait foi.</li>
+            <li>Les éventuels bugs d'affichage, erreurs de calculs ou indisponibilités techniques du service.</li>
+            <li>Les décisions prises par l'utilisateur sur la base de ces informations (détours réalisés, frais de déplacement, pannes d'essence, etc.).</li>
+        </ul>
+
+        <h2>3. Confidentialité et Données Personnelles</h2>
+        <p>L'application est conçue pour respecter totalement votre vie privée :</p>
+        <ul>
+            <li><strong>Aucune collecte de données :</strong> Aucun compte utilisateur n'est requis, et aucune donnée personnelle n'est enregistrée ou transmise à nos serveurs.</li>
+            <li><strong>Géolocalisation :</strong> Si vous consentez à utiliser le bouton de géolocalisation, vos coordonnées GPS sont traitées exclusivement localement par votre navigateur pour interroger l'API publique de l'État. Elles ne sont jamais sauvegardées.</li>
+            <li><strong>Cookies :</strong> Ce site n'utilise aucun cookie de ciblage ou de pistage publicitaire.</li>
+        </ul>
+
+        <h2>4. Hébergement et Noms de domaine</h2>
+        <p>Le code source et les fichiers de ce site web sont hébergés par :<br>
+        <strong>GitHub, Inc. (GitHub Pages)</strong><br>
+        88 Colin P Kelly Jr St,<br>
+        San Francisco, CA 94107, États-Unis.</p>
+        
+        <p>Le nom de domaine <em>enreserve.fr</em> est enregistré et géré par :<br>
+        <strong>IONOS SARL</strong><br>
+        7 Place de la Gare, BP 70109,<br>
+        57200 Sarreguemines Cedex, France.</p>
+
+    </div>
+
+    <script>
+        // Vérifier le thème enregistré au chargement de la page
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('enreserve_theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('theme-btn').innerText = '☀️';
+            }
+        });
+
+        // Fonction pour changer le thème et le sauvegarder
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('theme-btn').innerText = isDark ? '☀️' : '🌙';
+            
+            // Sauvegarder le choix dans le navigateur
+            localStorage.setItem('enreserve_theme', isDark ? 'dark' : 'light');
+        }
+    </script>
+</body>
+</html>
