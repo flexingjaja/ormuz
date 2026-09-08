@@ -263,10 +263,10 @@
         let mapMoveTimeout; 
 
         // Chargement de l'historique des prix (IDÉE 10)
-        let priceHistory = JSON.parse(localStorage.getItem('enreserve_history') || '{}');
+        let priceHistory = JSON.parse(localStorage.getItem('ORMUZ_history') || '{}');
 
         document.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('enreserve_theme') === 'dark' || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('enreserve_theme'))) {
+            if (localStorage.getItem('ORMUZ_theme') === 'dark' || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('ORMUZ_theme'))) {
                 document.body.classList.add('dark-mode');
                 document.getElementById('theme-btn').innerText = '☀️';
             }
@@ -293,7 +293,7 @@
             document.body.classList.toggle('dark-mode');
             const isDark = document.body.classList.contains('dark-mode');
             document.getElementById('theme-btn').innerText = isDark ? '☀️' : '🌙';
-            localStorage.setItem('enreserve_theme', isDark ? 'dark' : 'light');
+            localStorage.setItem('ORMUZ_theme', isDark ? 'dark' : 'light');
         }
 
         document.querySelectorAll('.filter-chip').forEach(btn => {
@@ -325,8 +325,8 @@
             const price = btn.getAttribute('data-price');
             const city = btn.getAttribute('data-city');
             const shareText = `🚗 Bon plan carburant ! Le ${type} est à ${price}€/L chez ${brand} (${city}).`;
-            if (navigator.share) navigator.share({ title: 'EnRéserve.fr', text: shareText, url: 'https://enreserve.fr' }).catch(console.error);
-            else alert("Copiez ce texte :\n\n" + shareText + "\nhttps://enreserve.fr");
+            if (navigator.share) navigator.share({ title: 'EnRéserve.fr', text: shareText, url: 'https://ORMUZ.fr' }).catch(console.error);
+            else alert("Copiez ce texte :\n\n" + shareText + "\nhttps://ORMUZ.fr");
         }
 
         function setMapViewOffset(lat, lon, zoom = 14) {
@@ -429,7 +429,7 @@
             }).filter(x => x);
 
             // Sauvegarde de l'historique dans le téléphone
-            localStorage.setItem('enreserve_history', JSON.stringify(priceHistory));
+            localStorage.setItem('ORMUZ_history', JSON.stringify(priceHistory));
 
             if (stations.length === 0) {
                 resDiv.innerHTML = '<div class="status-msg">Aucune station trouvée.</div>';
